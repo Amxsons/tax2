@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax Recieved</title>
+  <link rel="stylesheet" href="taxrecieved.css">
+  <script src="https://kit.fontawesome.com/75c600d4ed.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" integrity="sha512-r22gChDnGvBylk90+2e/ycr3RVrDi8DIOkIGNhJlKfuyQM4tIRAI062MaV8sfjQKYVGjOBaZBOA87z+IhZE9DA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+  <div class="top">
+    <h1>Tax </h1>
+    <a href="../index.html">
+      <i  class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
+    </a>
+  </div>
+  <div class="infobox">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
+  </div>
+  <div class="recievedtable"> </div>
+  <script> 
+    let table = document.querySelector(".table");
+    (
+      async()=>{
+        let workbook = XLXS.read(await
+        (await fetch("/microproject.xlsx")).arrayBuffer());
+        console.log(workbook)
+      }
+    )()
+  </script>
+  <div class="options">
+    <ul>
+      <li><a href="../home/home.html">HOME</a></li>
+      <li><a href="./taxrecieved.html">TAX RECIEVED</a></li>
+      <li><a href="#">TAX USED</a></li>
+      <li><a href="#">CONTRACTORS</a></li>
+    </ul>
+  </div>
+</body>
+</html>
